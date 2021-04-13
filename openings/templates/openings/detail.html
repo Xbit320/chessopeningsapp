@@ -1,0 +1,32 @@
+{% extends 'openings/base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row ">
+        {% if has_puzzle == 1%}
+        <div class="col-md-7 ms-auto mb-2">
+            <a href="{% url 'opening_puzzle' id %}" class="login-float btn btn-primary">Check your mainline
+                knowledge</a>
+        </div>
+        {% endif %}
+        <div class="col-md-3 ms-auto">
+            {% if followed == 1 %}
+            <h1><a class="star-white" href="{% url 'delete' id %}">★</a></h1>
+            {% elif followed == 0 %}
+            <h1><a class="star-yellow" href="{% url 'add' id %}"> ★ </a></h1>
+            {% else %}
+            <a href="{% url 'login' %}" class="login-float btn btn-primary">LOG IN </a>
+            {% endif %}
+
+        </div>
+
+        <div class='row '>
+            <div class="col-md-10 offset-1">
+                {{embed_code |safe }}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

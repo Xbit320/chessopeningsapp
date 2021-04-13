@@ -1,0 +1,18 @@
+{% extends 'openings/index.html' %}
+
+{% block user_info %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h1 class="mt-2 text-center">Welcome, {{user.username}}!</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h1 class="mt-2 text-center">Your followed openings:</h1>
+            <hr class="mt-5">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
